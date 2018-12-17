@@ -1,0 +1,165 @@
+<?php /* Template_ 2.2.8 2018/12/07 16:54:37 /Users/sonchowon/portfolio/_template/member/join.html 000006015 */ ?>
+<!DOCTYPE html>
+<html>
+<head>
+<?php $this->print_("head",$TPL_SCP,1);?>
+
+	<link rel="stylesheet" href="<?php echo $TPL_VAR["assets_url"]?>/css/join_login.css">
+</head>
+<body>
+<?php $this->print_("topbar",$TPL_SCP,1);?>
+
+<?php $this->print_("scrollup",$TPL_SCP,1);?>
+
+	<div class="wrap_mini">
+		<div class="mini_banner" style="background-image: url(<?php echo $TPL_VAR["assets_url"]?>/img/mini_banner.jpg);">
+			<img src="<?php echo $TPL_VAR["assets_url"]?>/img/mini_banner.jpg" alt="미니배너" style="visibility: hidden; display: none;">
+			<div class="banner_inner">
+				<div class="subtitle_holder text-center">
+					<h1><span>REGISTER</span></h1>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="wrapper">
+		<div class="form_custom">
+			<p class="form_title"><span>회원가입</span></p>
+			<form action="<?php echo $TPL_VAR["home_url"]?>/member/join_ok.php" method="post" name="myform">
+				<div class="input_custom">
+					<input type="text" name="user_name" id="user_name" placeholder="성함">
+				</div>
+				<div class="input_custom">
+					<input type="tel" name="tel" id="tel" placeholder="연락처 '-'없이 입력">
+				</div>
+				<div class="input_custom form-inline">
+					<input type="text" name="postcode" id="postcode" class="postcode_num" placeholder="우편번호(우편번호 찾기 클릭)">
+					<input type="button" class="postcode_btn" value="우편번호 찾기" onclick="daumPostCode()">
+				</div>
+				<div class="input_custom">
+					<input type="text" name="addr1" id="addr1" placeholder="기본주소(우편번호 찾기 클릭)">
+				</div>
+				<div class="input_custom">
+					<input type="text" name="addr2" id="addr2" placeholder="상세주소">
+				</div>
+				<div class="input_custom form-inline">
+					<input type="text" name="user_id" id="user_id" placeholder="ID (숫자와 영문자 조합으로 6~15자리)" class="inline_input">
+					<input type="button" value="중복검사" class="check" id="id_check">
+				</div>
+				<div class="comment" id="id_comment"></div>
+
+				<div class="input_custom form-inline">
+					<input type="email" name="email" id="email" placeholder="email 주소" class="inline_input">
+					<input type="button" value="중복검사" class="check" id="email_check">
+				</div>
+				<div class="comment" id="email_comment"></div>
+
+				<div class="input_custom">
+					<input type="password" name="user_pw" id="user_pw" placeholder="비밀번호(영문+숫자만 가능)">
+				</div>
+				<div class="input_custom">
+					<input type="password" name="user_pw_re" id="user_pw_re" placeholder="비밀번호 확인">
+				</div>
+				<p class="reg_title">
+				<label for="reg_billing">서비스이용약관</label></p>
+				<div class="reg_billing" id="reg_billing_1" style="margin-bottom: 20px">
+					<!-- /// -->
+				</div>
+				<p class="reg_title">
+					<label for="reg_billing">개인정보 취급방침</label>
+				</p>
+				<div class="reg_billing" id="reg_billing_2">
+					<!-- /// -->
+				</div>
+				<div class="reg_check">
+					<input type="checkbox" name="reg_yes" id="reg_checkbox">
+					<span>'</span><span class="text_bold">서비스이용약관</span>'과 '<span class="text_bold">개인정보 취급방침</span><span>'에 모두 동의하시겠습니까?<br>
+					- 동의에 체크를 해주시면 회원가입이 가능합니다.</span>
+				</div>
+				<div class="form_end">
+					<button type="submit" name="join_ok" id="reg_submit">회원가입하기</button>
+				</div>
+			</form>
+		</div>
+	</div>
+<?php $this->print_("footer",$TPL_SCP,1);?>
+
+	<script>
+		$(document).ready(function() {
+			$("#reg_billing_1").load("<?php echo $TPL_VAR["assets_url"]?>/reg_billing_1.txt");
+			$("#reg_billing_2").load("<?php echo $TPL_VAR["assets_url"]?>/reg_billing_2.txt");
+			if (!$('#reg_checkbox').is(':checked')) {
+				$('#reg_submit').attr('disabled', 'disabled');
+			}
+			$('#reg_checkbox').click(function() {
+	        	if ($(this).is(':checked')) {
+	            	$('#reg_submit').removeAttr('disabled');
+	            	$('#reg_submit').css('color', '#292929');
+	        	} else {
+	            	$('#reg_submit').attr('disabled', 'disabled');
+	            	$('#reg_submit').css('color', '#a3a3a3');
+		        }
+		    });
+		});
+
+		$(function() {
+			var id_check = $('#id_check');
+			var user_id = $('#user_id')
+			var email = $('#email');
+			var email_check = $('#email_check');
+			var id_comment = $("#id_comment");
+			var email_comment = $("#email_comment");
+
+			id_check.click(function() {
+				console.log(user_id.val());
+				$.ajax({
+					type: 'post',
+					dataType: 'json',
+					url: '../member/id_check.php',
+					data: {user_id: user_id.val()},
+					success: function(json) {
+						if (json.id_rt == 'ok') {
+							console.log(json.id_rt);
+							id_comment.removeClass('red').addClass('blue');							
+							id_comment.text('- 사용가능한 아이디입니다.');
+						} else {
+							id_comment.removeClass('blue').addClass('red');
+							id_comment.text('- 이미 사용중인 아이디입니다. 다시 입력해주세요.');
+							user_id.val("");
+							user_id.focus();
+						}
+					},
+					error: function(){
+						console.log('failed');
+					}
+				});
+			});
+
+			email_check.click(function() {
+				console.log(email.val());
+				$.ajax({
+					type: 'post',
+					dataType: 'json',
+					url: '../member/email_check.php',
+					data: {email: email.val()},
+					success: function(json) {
+						if (json.email_rt == 'ok') {
+							console.log(json.email_rt);
+							email_comment.removeClass('red').addClass('blue');	
+							email_comment.text('- 사용가능한 이메일입니다.');
+						} else {
+							email_comment.removeClass('blue').addClass('red');
+							email_comment.text('- 이미 사용중인 이메일입니다. 다시 입력해주세요.');
+							email.val("");
+							email.focus();
+						}
+					},
+					error: function(){
+						console.log('failed');
+					}
+				});
+			});
+		});
+		
+	</script>
+</body>
+</html>

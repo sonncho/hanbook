@@ -1,0 +1,112 @@
+/*모바일용*/
+.select_sort {
+	width: 50%;
+	height: 80px;
+}
+.product_li {
+	margin-right: 0;
+    width: 100%;
+    margin-bottom: 24px;
+    float: left;
+    height: 100%;
+}
+.top_product_li a {
+	display: block;
+	height: 100%;
+	text-align: center;
+}
+.top_product_li img {
+	max-width: 100%;
+	height: auto;
+}
+.top_product_li h6 {
+	margin-top: 20px;
+	font-size: 14px;
+	padding: 0 10px;
+	width: 100%;
+	text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    word-wrap: normal !important;
+    display: block;
+	line-height: 28px;
+	letter-spacing: 2px;
+	font-style: normal;
+	color: #000000;
+}
+.product_li .price {
+	color: #c79a73 !important;
+    font-size: 14px;
+    line-height: 26px;
+    font-family: 'PT Sans' !important;
+    font-style: normal;
+    font-weight: 800;
+    letter-spacing: 0px;
+    display: block;
+    margin: 0 0 16px;
+    text-align: center;
+}
+.product_li .book_count {
+	font-size: 13px;
+	color: #a3a3a3;
+}
+.product_li del {
+	font-size: 14px;
+    color: #a3a3a3;
+    line-height: 20px;
+}
+.product_li .price del span {
+	font-size: 13px;
+    color: #a3a3a3;
+    margin-right: 5px;
+}
+.product_li .price ins {
+	color: #c79a73 !important;
+    font-size: 14px;
+    line-height: 26px;
+    font-family: PT Sans, sans-serif;
+    font-style: normal;
+    font-weight: 800;
+    letter-spacing: 0px;
+    text-decoration: none;
+}
+.product_li .top_product_li img {
+	transition: 0.4s ease;
+}
+.product_li .top_product_li a:hover img {
+	opacity: 0.3;
+}
+.product_li .top_product_li a:hover h6{
+	color: #c79a73;
+}
+
+.page-item.active .page-link {
+	color: #000;
+	background-color: #eee;
+	border-color: #dee2e6;
+}
+/*테블릿용*/
+@media all and (min-width: 768px) {
+	.product_li {
+		width: 48.37209302325581%;
+		margin-right: 3.255813953488372%;
+	}
+	.product_li:nth-child(2n) {
+		margin-right: 0;
+	}
+}
+
+/*피씨용*/
+@media all and (min-width: 998px) {
+	.product_li {
+		width: 31.81818181818182%;
+	    margin-right: 2.272727272727273%;
+	}
+	.product_li:nth-child(2n) {
+		margin-right: 2.272727272727273%;
+	}
+	.product_li:nth-child(3n) {
+		margin-right: 0;
+	}
+}

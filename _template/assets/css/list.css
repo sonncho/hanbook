@@ -1,0 +1,212 @@
+/*모바일용*/
+.container {
+	width: 80% !important;
+	padding: 0 !important;
+	margin-top: 20px !important;
+	margin-bottom: 50px !important;
+	/*display: flex;*/
+}
+.column1 {
+	min-height: 300px;
+}
+.column2 { 
+	min-height: 400px;
+}
+
+.commu_col1_title {
+	margin-bottom: 25px;
+	margin-top: 10px;
+	font-weight: bolder;
+	font-size: 16px;
+}
+.all_search_section { margin-bottom: 50px; }
+.search_form { margin-bottom: 20px; }
+.search_form form {
+	border: 1px solid #e5e5e5;
+	height: 36px;
+}
+.all_search_box input[type="text"] {
+	display: inline-block;
+	text-decoration: none;
+	background-color: transparent;
+	border: 0;
+	outline: 0;
+	color: #adadad;
+	padding: 2px 4%;
+    float: left;
+    height: 33px;
+    width: 85%;
+}
+.all_search_box button {
+	float: right;
+	border: 0;
+	padding-top: 6px;
+    padding-right: 12px;
+    background-color: transparent;
+    cursor: pointer;
+    height: 33px;
+}
+.search_form input[type="text"] {
+	padding: 6px 8px;
+}
+.commu_search_section button {
+	font-size: 13px;
+	background-color: #3e3e3e;
+	color: #fff;
+	font-weight: 300;
+	padding: 5px 10px;
+	border: 1px solid #3e3e3e;
+}
+.commu_search_section button:hover {
+	background-color: 
+}
+button:focus { outline: 0; }
+.category_section li { margin-bottom: 15px; }
+.category_section li a { 
+	color: #b0b0b0;
+	font-size: 13px;
+}
+.category_section li a:hover { color: #cea683; }
+.title_wrap { margin: 0; text-align: center;}
+.title_box {
+	border-top: 1px solid #eaeaea;
+	padding-bottom: 20px;
+	margin-top:20px;
+	margin-bottom: 0;
+}
+.title_here {
+ 	background-color: #fff;
+ 	border: 1px solid #cccccc;
+    color: #292929;
+    display: inline;
+    padding: 10px 34px;
+    /*position: absolute;
+    top: 0;*/
+}
+.commu_search_section {
+	margin-top: 30px;
+	/*margin-bottom: 10px;*/
+}
+.table {
+    table-layout: fixed !important;
+    width: 100%;
+    border: 0;
+    font-size: 14px;
+    border-collapse: collapse;
+}
+.tb_title .cut_strings {
+	width: auto;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    word-wrap: normal;
+    color: #515151;
+}
+.table thead td { border-top: 0; font-size: 14px; color: #545861;}
+.table { font-size: 13px; }
+.table thead tr { 
+	border-bottom: 2px solid #e3e3e3;
+	font-weight: 400;
+    color: #545861;
+}
+.table tbody td { 
+	padding: 17px 0;
+    color: #a3a3a3;
+}
+.th_hit { display: none; }
+.th_writer { display: none;}
+.th_cate { width: 20%; }
+.th_date { width: 26%; }
+.tb_cate { text-align: center; }
+.tb_writer { 
+	text-align: center;
+	display: none;
+}
+.tb_date { text-align: center;}
+.tb_hit { text-align: center; display: none;}
+.qna_list tbody tr:hover {
+	background-color: #f4f4f4;
+}
+.write_btn {
+	/*padding: 8px 12px;*/
+}
+.write_btn a {
+	background-color: #CFA987;
+	height: 32px;
+	padding: 0 14px !important;
+	cursor: pointer;
+    border: none;
+    line-height: 32px;
+    display: inline-block;
+    color: white;
+    font-size: 13px;
+}
+.write_btn a:hover{
+	background-color: #468cc8;
+}
+
+.custom_button {
+	padding-top: 20px !important;
+}
+.custom_button button {
+	padding: 0 10px;
+	height: 28px;
+	color: white;
+	background-color: #CFA987;
+	border: 0;
+	font-size: 13px;
+	cursor: pointer;
+    font-family: nanum gothic !important;
+}
+.custom_button button:hover {
+	background-color: #468cc8 !important;	
+}
+.custom_button button[type="submit"] {
+	background-color: #3e3e3e;
+}
+
+.page-item.active .page-link {
+	color: #000 !important;
+	background-color: #eee !important;
+	border-color: #dee2e6 !important;
+}
+.like_li {
+	float: left;
+	margin-right: 1.5%;
+	margin-bottom: 1.5%;
+	width: 31%;
+}
+.like_li img { width: 100%; }
+.like_li:nth-child(3n){
+	margin-right: 0;
+}
+.no_like { font-size: 12px; color: #ddd; }
+/*테블릿용*/
+@media all and (min-width: 768px) {
+	.container { width: 90% !important; display: flex; }
+	.column1 {
+		width: 25%; 
+		border-right: 1px solid #e5e5e5;
+		padding-right: 25px;
+	}
+	.column2 { width: 75%; padding-left: 25px;}
+	.all_search_box input[type="text"] {
+		width: 78%;
+	}
+	.th_hit, .th_writer, .tb_hit, .tb_writer {
+		display: table-cell;
+	}
+	.th_cate { width: 14%; }
+	.th_title { width: auto; }
+	.th_writer { width: 16%; }
+	.th_hit { width: 11%; }
+	.th_date { width: 17%; }
+}
+
+/*피씨용*/
+@media all and (min-width: 998px) {
+	.th_cate { width: 80px; }
+	.th_writer { width: 120px; }
+	.th_date { width: 120px; }
+	.th_hit { width: 60px; }
+}

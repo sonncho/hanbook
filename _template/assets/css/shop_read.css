@@ -1,0 +1,207 @@
+/*모바일용*/
+.container {
+	padding-left: 5% !important;
+	padding-right: 5% !important;
+}
+.item_info_row {
+	padding-top: 20px;
+	margin-bottom: 30px;
+}
+.item_column1 {
+	width: 100%;
+}
+.item_column1 img {
+	width: 100%;
+	height: 100%;
+}
+.item_column2 { width: 100%; }
+.item_info {
+	border-bottom: 1px solid #ccc;
+	padding-bottom: 20px;
+}
+.book_title { 
+	font-size: 22px;
+	letter-spacing: 3px;
+	padding: 3px 0;
+}
+.price_info {
+	border-bottom: 1px solid #eee;
+	padding: 20px 0;
+}
+.book_price .onega {
+	color: #888;
+	font-size: 15px;
+}
+.book_price .price { font-size: 22px; font-weight: bolder; color: #CFA987;}
+.seller_info { 
+	border-bottom: 1px solid #eee;
+	padding: 20px 0;
+	font-size: 16px;
+}
+.seller_info span { font-weight: bolder; }
+.sell_btn {
+	padding: 20px 0;
+	/*border-bottom: 1px solid #eee;*/
+}
+.sell_btn a {
+	background-color: #f5f5f5;
+	display: inline-block;
+	width: 26%;
+	height: 50px;
+	margin-right: 5px;
+	font-size: 14px;
+	text-align: center;
+	line-height: 50px;
+	cursor: pointer;
+}
+.sell_btn a:hover {
+	background-color: #cfa987;
+	color: #fff;
+}
+.book_info { font-size: 13px;}
+
+/****** 본문탭 시작 *******/
+.tabs { width:100%; display:inline-block; }
+/* Clearfix */
+.tab-links:after {
+	display:block;
+	clear:both;
+	content:'';
+}
+.tab-links { 
+	position: relative; 
+	z-index: 100;
+}
+.tab-links li { float:left; list-style:none; }
+.tab-links a {
+	padding:9px 15px;
+	display:inline-block;
+	border-radius:3px 3px 0px 0px;
+	background-color: #fff;
+	font-size:14px;
+	font-weight:500;
+	color:#b4b4b4;
+	transition:all linear 0.15s;
+}
+.tab-links a:hover {
+	color: #cfa987;
+	text-decoration:none;
+}
+li.active a, li.active a:hover {
+	background:#fff;
+	font-weight: 600;
+	color:#4c4c4c;
+	border: 2px solid #e3e3e3;
+	border-bottom: 0;
+}
+/*----- Content of Tabs -----*/
+.tab-content {
+	padding:20px 0;
+	border-top: 2px solid #e3e3e3;
+	position: relative;
+	top: -2px;
+	background:#fff;
+}
+.tab { display:none; }
+.tab.active { display:block; }
+
+/****** 본문탭 끝 *******/
+.tab-content .content_detail { font-size: 13px; line-height: 0.62rem;}
+.content_img { padding-top: 20px; }
+.content_img img {
+	max-width: 100%;
+	padding-bottom: 15px;
+}
+.comment_info { padding-bottom: 8px; }
+.qna_list { 
+	border-bottom: 1px solid #e0dede;
+	padding: 20px 0;
+}
+.qna_content { color: #a3a3a3; font-size: 14px; }
+.qna_date { font-size: 14px; color: #a3a3a3;}
+.qna_username { line-height: 30px; font-size: 14px; }
+
+.form_section { padding: 30px 0; }
+.form_title { 
+	letter-spacing: 9px; 
+	font-size: 14px;
+	padding-bottom: 10px;
+}
+.form_section p label {
+	color: #a3a3a3;
+	font-size: 14px;
+	padding-top: 20px;
+}
+.form_section p input, .form_section p textarea {
+	display: block !important;
+    padding: 15px 12px;
+	background-color: #f5f5f5;
+    border: 1px solid #e5e5e5;
+    color: #000000;
+    line-height: 16px;
+    font-size: 13px;
+    width: 100%;
+}
+.form_section p input[type="submit"] {
+	width: 100px;
+	letter-spacing: 3px;
+	font-size: 13px;
+}
+.qna_form_submit { padding-top: 15px; }
+.qna_control { padding-top: 5px; }
+.qna_control a {
+	color: red;
+	font-size: 13px;
+}
+.sell_btn .like_form {
+	display: inline-block;
+}
+.sell_btn .like_form #like_ok {
+	background-color: #f5f5f5;
+    border: none;
+    display: inline-block;
+    width: 100%;
+    height: 50px;
+    margin-right: 57px;
+    font-size: 14px;
+    text-align: center;
+    line-height: 48px;
+    cursor: pointer;
+}
+.sell_btn .like_form #like_ok:hover {
+	background-color: #cfa987;
+    color: #fff;
+}
+
+.like_is_ok { 
+	display: inline-block;
+    padding: 14px 5%;
+    text-align: center;
+    font-size: 14px;
+    border: 1px solid #000;
+}
+.like_is_ok img { 
+	vertical-align: middle; 
+	width: 12px;
+	margin-right: 5px;
+}
+/*테블릿용*/
+@media all and (min-width: 768px) {
+	.item_column1 {
+		width: 50%;
+		padding-right: 15px;
+	}
+	.item_column2 {
+		width: 50%;
+		padding-left: 15px;
+	}
+	.content_img img { max-width: 60%; }
+	.form_section p input[type="submit"] {
+		width: 140px;
+	}
+}
+
+/*피씨용*/
+@media all and (min-width: 998px) {
+	.content_img img { max-width: 50%; }
+}

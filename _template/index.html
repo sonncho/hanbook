@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!--{#head}-->
+	<link rel="stylesheet" href="{assets_url}/css/shop_list.css">
+</head>
+<body>
+	<!--{#topbar}-->
+	<!--{#scrollup}-->
+	<div class="wrap">
+		<div class="banner_img" style="background-image: url({assets_url}/img/main2.jpg);">
+			<img src="{assets_url/img/main2.jpg}" alt="메인01" style="visibility: hidden; display: none;">
+			<div class="banner_content" id="banner_fade">
+				<div class="banner_top_text text-center">
+					<img src="{assets_url}/img/vanner.png" alt="배너이미지">
+					<div class="banner_bottom">
+						<p>
+							<span>A book that is shut is but a block. - Thomas Fuller -</span>
+						</p>
+						<a href="#" class="quick_btn" style="margin-right: 10px;">SHOP NOW</a>
+						<a href="{home_url}/member/about_us.php" class="quick_btn">ABOUT US</a>
+					</div>
+				</div>
+			</div>
+			<!-- <div id="log">0</div> -->
+		</div>
+	</div>
+	<div class="wrapper">
+		<!--{? member_info == false}-->
+			<h2>로그인되지않음</h2>
+		<!--{:}-->
+			<h2>로그인 성공</h2>
+			{=debug(member_info)}
+		<!--{/}-->
+		<div class="arrival">
+			<h1 class="text-center">NEW ARRIVALS</h1>
+			<div class="arrival_card cfixed">
+				<ul class="card_part">
+					<!--{@ shop_list }-->
+					<li class="card_li">
+						<a href="{home_url}/shop/shop_read.php?shop_type={.shop_type}&shop_document_id={.id}">
+							<img src="{.thumbnail}" alt="사진1">
+							<div class="li_content text-center">
+								<p class="mb-3">{.book_name}</p>
+								<p class="mb-3">Yann Martel / NOVEL</p>
+								<p>2,000 won</p>
+							</div>
+						</a>
+					</li>
+					<!--{/}-->
+				</ul>
+			</div>
+		</div>
+		<div class="best_seller">
+			<h1 class="text-center">BEST SELLER</h1>
+		</div>
+	</div>
+
+	<!--{#footer}-->
+</body>
+</html>

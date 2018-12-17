@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!--{#head}-->
+	<link rel="stylesheet" href="{assets_url}/css/list.css">
+</head>
+<body>
+	<!--{#topbar}-->
+	<!--{#scrollup}-->
+	<div class="wrap_mini">
+		<div class="mini_banner" style="background-image: url({assets_url}/img/mini_banner.jpg);">
+			<img src="{assets_url}/img/mini_banner.jpg" alt="미니배너" style="visibility: hidden; display: none;">
+			<div class="banner_inner">
+				<div class="subtitle_holder text-center">
+					<h1><span>{com_config.name}</span></h1>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="container">
+		<div class="column1">
+			<div class="category_section">
+				<p class="commu_col1_title"><span>COMMUNITY</span></p>
+				<ul>
+					<li><a href="{home_url}/community/com_list.php?com_type=notice">NOTICE</a></li>
+					<li><a href="{home_url}/community/com_list.php?com_type=qna">Q &amp; A</a></li>
+					<li><a href="{home_url}/community/com_list.php?com_type=review">REVIEW</a></li>
+				</ul>
+			</div>
+			<!-- 최근본 상품 -->
+			<div class="cookie_section">
+				<p class="commu_col1_title"><span>내 관심상품</span></p>
+				<ul class="row">
+					<!--{? my_like != false }-->
+					<!--{@ my_like }-->
+					<li class="like_li"><a href="{home_url}/shop/shop_read.php?shop_type={.shop_type}&shop_document_id={.shop_document_id}"><img class="my_like_img" src="{.thumbnail}" alt=""></a></li>
+					<!--{/}-->
+					<!--{:}-->
+					<p class="no_like">관심상품이 존재하지 않습니다.<br>
+					(로그인후 이용가능)</p>
+					<!--{/}-->
+					
+				</ul>	
+			</div>
+		</div>
+
+		<div class="column2">
+			<!-- 타이틀시작 -->
+			<div class="title_wrap">
+				<div class="title_box">
+					<div class="title_here">
+						<span style="font-size: 13px; font-weight: bolder;">{com_config.name}</span>
+					</div>
+				</div>
+			</div>
+			<!-- 타이틀 끝 -->
+			<!-- 부분 검색어시작 -->
+			<div class="commu_search_section clearfix">
+				<div class="float-right">
+					<form action="com_list.php" method="get">
+						<div class="search_form">
+							<input type="hidden" name="com_type" value="{com_config.type}">
+							<input type="text" name="keyword" placeholder="검색어" value="{keyword}">
+							<span>
+								<button type="submit">검색</button>
+							</span>
+						</div>
+					</form>
+				</div>
+			</div>
+			<!-- 검색어끝 -->
+			<!-- 테이블시작 -->
+			<!--{? com_config.type == 'notice'}-->
+			<div class="list_table">
+				<table class="table">
+					<thead class="text-center">
+						<tr>
+							<td class="th_cate">분류</td>
+							<td class="th_title">제목</td>
+							<td class="th_writer">작성자</td>
+							<td class="th_date">작성일</td>
+							<td class="th_hit">조회</td>
+						</tr>
+					</thead>
+					<tbody style="background-color: #f4f4f4;">
+						<!--{? document_list != FALSE }-->
+							<!--{@ document_list }-->
+						<tr>
+							<td class="tb_cate">공지사항</td>
+							<td class="tb_title">
+								<div class="cut_strings">
+									<nobr><a href="read.php?com_type={com_config.type}&document_id={.id}">{=htmlspecialchars(.subject)}</a></nobr></div>
+							</td>
+							<td class="tb_writer">{=htmlspecialchars(.writer_name)}</td>
+							<td class="tb_date">{=substr(.reg_date, 0, 10)}</td>
+							<td class="tb_hit">{.hit}</td>
+						</tr>
+							<!--{/}-->
+						<!--{:}-->
+						<tr>
+							<td colspan="5" class="text-center" style="line-height: 100px;">조회된 글이 없습니다.</td>
+						</tr>
+						<!--{/}-->
+					</tbody>
+				</table>
+			</div>
+			<!--{:}-->
+			<div class="list_table">
+				<table class="table qna_list">
+					<thead class="text-center">
+						<tr>
+							<td class="th_cate">번호</td>
+							<td class="th_title">제목</td>
+							<td class="th_writer">작성자</td>
+							<td class="th_date">작성일</td>
+							<td class="th_hit">조회</td>
+						</tr>
+					</thead>
+					<tbody>
+						<!--{? document_list != FALSE }-->
+						<!--{@ document_list}-->
+						<tr>
+							<td class="tb_cate">{.id}</td>
+							<td class="tb_title">
+								<div class="cut_strings">
+									<nobr><a href="read.php?com_type={com_config.type}&document_id={.id}">{=htmlspecialchars(.subject)}</a></nobr></div>
+							</td>
+							<td class="tb_writer">
+								{=htmlspecialchars(.writer_name)}
+							</td>
+							<td class="tb_date">{=substr(.reg_date, 0, 10)}</td>
+							<td class="tb_hit">{.hit}</td>
+						</tr>
+						<!--{/}-->
+						<!--{:}-->
+						<tr>
+							<td colspan="5" class="text-center" style="line-height: 100px;">조회된 글이 없습니다.</td>
+						</tr>
+						<!--{/}-->
+					</tbody>
+				</table>
+			</div>
+			<!--{/}-->
+			<!-- 테이블끝 -->
+			<!-- 페이지번호시작 -->
+			<div class="page_num_info">
+				<nav aria-label="Page navigation example">
+				  <ul class="pagination justify-content-center">
+				  	<!--{? page_info.prev_group_last_page > 0 }-->
+				    <li class="page-item">
+				      <a class="page-link" href="com_list.php?com_type={com_config.type}&page={page_info.prev_group_last_page}&keword={=urlencode(keyword)}" aria-label="Previous">
+				        <span aria-hidden="true">&laquo;</span>
+				        <span class="sr-only">Previous</span>
+				      </a>
+				    </li>
+				    <!--{:}-->
+				    <li class="page-item disabled">
+				    	<a class="page-link" href="#"><span aria-hidden="true">&laquo;</span></a>
+				    </li>
+				    <!--{/}-->
+
+				    <!--{@ range(page_info.group_start, page_info.group_end) }-->
+					    <!--{? .value_ == page_info.now_page }-->
+					    <li class="page-item active"><a class="page-link" href="#">{.value_}</a></li>
+					    <!--{:}-->
+					    <li class="page-item"><a class="page-link" href="com_list.php?com_type={com_config.type}&page={.value_}&keyword={=urlencode(keyword)}">{.value_}</a></li>
+					    <!--{/}-->
+				    <!--{/}-->
+
+				    <!--{? page_info.next_group_first_page > 0}-->
+				    <li class="page-item">
+				      <a class="page-link" href="com_list.php?com_type={com_config.type}&page={page_info.next_group_first_page}&keyword={=urlencode(keyword)}" aria-label="Next">
+				        <span aria-hidden="true">&raquo;</span>
+				        <span class="sr-only">Next</span>
+				      </a>
+				    </li>
+				    <!--{:}-->
+				    <li class="page-item disabled">
+				    	<a href="#" class="page-link"><span aria-hidden="true">&raquo;</span></a>
+				    </li>
+				    <!--{/}-->
+				  </ul>
+				</nav>
+			</div>
+			<!-- 페이지번호끝 -->
+			<div class="write_btn float-right">
+				<a href="{home_url}/community/write.php?com_type={com_config.type}">글쓰기</a>
+			</div>
+		</div>
+	</div>
+	<!--{#footer}-->
+</body>
+</html>

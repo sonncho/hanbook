@@ -1,0 +1,95 @@
+.sub_title { 
+	color: #545861;
+	padding-bottom: 20px;
+	color: #ccc;
+	font-size: 13px;
+}
+.line_custom { border-top: 1px solid #e3e3e3; }
+.pwd_form { 
+	border-bottom: 1px solid #e3e3e3;
+	padding: 10px 0;
+	text-align: center;
+}
+.pwd_form label {
+	display: inline-block; 
+	width: 17%;
+	font-size: 13px;
+	font-weight: bold;
+}
+.pwd_form input[type=password] {
+	padding: 6px 2px;
+	font-size: 12px;
+	color: #666;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	display: inline-block;
+	width: 75%;
+}
+.left {
+	position: static;
+    float: left;
+	padding-top: 20px; 
+}
+.right {
+	padding-top: 20px;
+	position: static;
+    float: right;
+    width: 50%;
+    text-align: right;
+}
+.btn_group .left a {
+	position: relative;
+    display: inline-block;
+    margin: 0 !important;
+    padding: 0 10px !important;
+    height: 28px;
+    line-height: 28px;
+    font-size: 12px !important;
+    font-weight: normal;
+    color: white !important;
+    background-image: none !important;
+    background-color: #CFA987 !important;
+    border: none;
+    text-decoration: none;
+    cursor: pointer;
+    vertical-align: middle;
+    text-shadow: none !important
+}
+.btn_group .left a:hover {
+	background-color: #428bca !important;
+}
+.right button[type=submit]:hover {
+	background-color: #428bca !important;
+}
+
+.right button[type=submit] {
+	background-color: #3E3E3E !important;
+    position: relative;
+    display: inline-block;
+    margin: 0 !important;
+    padding: 0 10px !important;
+    height: 28px;
+    line-height: 28px;
+    font-size: 12px !important;
+    font-weight: normal;
+    color: white !important;
+    background-image: none !important;
+    border: none;
+    text-decoration: none;
+    cursor: pointer;
+    vertical-align: middle;
+    text-shadow: none !important;
+
+}
+
+.file_privew .check_input{
+	position: relative;
+}
+
+.check_input label input {
+	position: absolute;
+}
+
+.check_input label img {
+	position: absolute;
+}

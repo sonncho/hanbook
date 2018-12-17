@@ -1,0 +1,184 @@
+/*모바일용*/
+.read_title {margin-top: 10px;}
+.read_title p {
+    padding: 12px 22px;
+    color: #545861;
+    font-weight: bold;
+    line-height: 30px;
+    font-size: 20px !important;
+    /*font-family: jeju gothic !important;*/
+}
+.read_inform {
+	border-top: 1px solid #e3e3e3;
+    border-bottom: 1px solid #e3e3e3;
+    width: 100%;
+    background-color: #f9f9f9;
+    font-size: 13px;
+}
+.read_inform .inform_attr {
+    font-weight: bold;
+    color: #545861;
+    padding: 15px 35px 15px 22px;
+
+}
+.inform_attr .attr_name {
+    font-weight: bold;
+    color: #545861;
+    width: 60px;
+    text-align: right;
+}
+.inform_attr .attr_value {
+    padding-left: 20px;
+    color: #545861;
+    font-weight: 300;
+}
+.content_section { min-height: 300px; }
+.content_section .content_view {
+	padding: 22px;
+	font-family: montserrat, nanum gothic !important;
+	font-size: 14px;
+	color: #a3a3a3;
+    line-height: 1.2456rem;
+}
+.comment_section { background-color: #f9f9f9;}
+.comment_top { padding: 15px 20px 15px 0;}
+.comment_top_wrap { padding: 15px 20px 15px 0;}
+.comment_count {
+	padding: 0 0 0 20px;
+    color: #8a8a8a;
+    font-size: 12px;
+}
+.comment_section hr {
+    margin: 15px 0 0 0 !important;
+    padding: 0;
+    height: 0;
+    border: 0;
+    border-bottom: 1px dashed #d8d8d8;
+    background: none;
+}
+.comment_total_count { color: #f05726;}
+.comment_item { 
+	padding: 15px 0 0 20px; 
+	width: 100%;
+	font-size: 12px;
+	font-family: montserrat, nanum gothic !important;
+}
+.comment_item .comment_username {
+	font-weight: bold;
+    color: #3b3b3b;
+    padding-right: 10px;
+    width: auto;
+}
+.comment_item .comment_date {
+	font-size: 11px;
+    color: #a0a0a0;
+    margin: 0;
+}
+.comment_item .comment_content {
+	margin: 0;
+    padding: 10px 0;
+    width: 100%;
+    color: #3b3b3b;
+}
+.comment_control span a {
+	color: #f05726;
+    text-decoration: none;
+}
+.comment_control span {
+    display: inline-block;
+    font-size: 11px;
+    padding-right: 3px;
+}
+.comment_form {
+    padding: 20px 0 0 0;
+    width: 100%;
+    font-size: 13px;
+}
+.form_group {
+	padding-bottom: 10px;
+    width: 230px;
+}
+.form_group .comment_input_label {
+	display: inline-block !important;
+    margin: 0;
+    padding: 0;
+    margin-left: 21px;
+    width: 60px;
+    font-size: 12px;
+    color: #8a8a8a;
+    vertical-align: middle;
+}
+.form_group .comment_input {
+	display: inline !important;
+    margin: 0 !important;
+    padding: 6px 2px !important;
+    width: 60% !important;
+    height: auto;
+    line-height: normal;
+    font-size: 12px;
+    border: 1px solid #eaeaea;
+}
+.comment_submit {
+	display: table;
+	width: 100%;
+}
+.comment_submit_text {
+	display: table-cell;
+	padding-left: 20px;
+}
+.comment_submit_text textarea {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 65px;
+    border: 1px solid #eaeaea;
+    font-size: 12px;
+    vertical-align: middle;
+}
+.comment_submit_btn {
+	display: table-cell;
+    width: 80px;
+    height: 65px;
+    text-align: right;
+    vertical-align: top;
+}
+.comment_submit_btn button[type="submit"] {
+	margin: 0;
+    padding: 0;
+    width: 69px;
+    height: 65px;
+    line-height: 65px;
+    vertical-align: middle;
+    cursor: pointer;
+    font-size: 11px !important;
+    border: 1px solid rgb(216, 216, 216);
+}
+.control_button { padding: 15px 0; width: 100%; }
+.control_button a {
+	display: inline-block;
+	margin: 0 !important;
+	padding: 5px 10px;
+	text-align: center;
+	height: 28px;
+    font-size: 13px !important;
+    font-weight: 200;
+    color: #fff;
+    background-color: #CFA987 !important;
+    vertical-align: middle;
+}
+.control_button a:hover {
+	background-color: #468cc8 !important;
+}
+
+/*테블릿용*/
+@media all and (min-width: 768px) {
+    .content_section .content_view {
+        line-height: 0.862rem;
+    }
+	
+}
+
+/*피씨용*/
+@media all and (min-width: 998px) {
+
+}

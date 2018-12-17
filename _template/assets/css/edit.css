@@ -1,0 +1,66 @@
+/*모바일용*/
+input:focus {
+    outline: none;
+    border: 1px solid #d9ac86;
+    box-shadow: 0 0 10px #d9ac86;
+}
+.edit_title { 
+	font-size: 20px;
+	margin-bottom: 15px;
+}
+.edit_form_custom {
+	padding: 44px 0;
+	font-size: 13px;
+	font-weight: 400 !important;
+}
+.input_edit label {
+	display: block;
+	margin-bottom: 3px;
+	color: #a3a3a3;
+}
+.input_edit .color_change { color: #a3a3a3;}
+.input_edit p {color: #a3a3a3;}
+.input_edit { margin-bottom: 20px;}
+.edit_form_custom form .input_edit input {
+	background-color: #f5f5f5;
+	border: 1px solid #e5e5e5;
+	width: 100%;
+	padding: 15px 13px;
+}
+.input_edit .margin_edit { margin-bottom: 20px; }
+.input_edit button[type="submit"] {
+	background-color: #f3f3f1;
+	color: #000;
+	font-size: 13px;
+	letter-spacing: 1px;
+	padding: 15px 23px;
+	border: 0;
+	transition: all .1s linear;
+}
+.input_edit button[type="submit"]:hover {
+	background-color: #c79a73;
+	color: #fff;
+}
+.input_edit .width_edit { width: 65% !important; }
+.input_edit button[type="button"] {
+	background-color: #fff;
+	border: 2px solid #000;
+	padding: 11px 13px;
+	display: inline-block;
+	margin-left: 2%;
+	width: 32%;
+	cursor: pointer;
+}
+.input_edit button[type="button"]:hover {
+	color: #c79a73;
+}
+
+/*테블릿용*/
+@media all and (min-width: 768px) {
+	.edit_form_custom { padding: 44px 25%; }
+}
+
+/*피씨용*/
+@media all and (min-width: 998px) {
+	.edit_form_custom { padding: 44px 30%; }
+}
